@@ -7,3 +7,14 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+
+function tabMaker (topic) {
+    const tabDiv = document.createElement('div');
+    tabDiv.classList.add('tab');
+    tabDiv.textContent = topic;
+
+    return tabDiv;
+}
+
+const topicsDiv = document.querySelector('.topics');

@@ -29,3 +29,7 @@ function Header() {
 
     return headerDiv;
 }
+
+const headerContainer = document.querySelector('.header-container');
+headerContainer.appendChild(Header());
+

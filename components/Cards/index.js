@@ -18,6 +18,24 @@
 //
 // Create a card for each of the articles and add the card to the DOM.
 
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response => {
+        //Access the articles object and store it in a variable and then the values of the object in an array
+        const articlesObject = response.data.articles;
+        const articlesArray = Object.values(articlesObject);
+
+        //For each item in the array, loop through it and then loop through its containing items and call the articleCardMaker function on each on
+        articlesArray.forEach(article => {
+            for (let i = 0; i < article.length; i++) {
+                articleCardMaker(article[i]);
+            }
+        })
+    })
+    .catch(error => {
+        console.log(error);
+    })
+
+
 function articleCardMaker(article) {
     const cardDiv = document.createElement('div');
     const headlineDiv = document.createElement('div');

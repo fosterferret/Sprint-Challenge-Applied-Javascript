@@ -59,7 +59,6 @@ function carouselMaker () {
     images.forEach(img => img.style.display = "none");
     --index;
     if (index < 0) index = 3;
-    console.log(index);
     images[index%4].style.display = "block";
   });
 
